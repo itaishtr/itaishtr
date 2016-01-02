@@ -1,0 +1,21 @@
+﻿<div>
+    <h2>Home</h2>
+
+    <div>     
+        <div class="list-group">
+            <button type="button" class="list-group-item"  ng-click="ctrl.OnGroupSelect(ctrl.currentGroup)">Current Group: {{ctrl.currentGroup.id}}:{{ctrl.currentGroup.name}}></button>
+            <div ng-repeat="item in ctrl.currentGroup.items track by item.id">
+                <!--<a href="#" class="list-group-item">{{item.id}}:{{item.name}}</a>-->
+                <button type="button" class="list-group-item" ng-click="ctrl.OnGroupSelect(item)">{{item.id}}:{{item.name}}</button>
+            </div>
+
+        </div>
+    </div>
+
+  <!--  <a href="/#/about">About</a>-->
+    <a ui-sref=".admin">Admin</a>
+
+    <button ng-click="ctrl.OnAddGroup(ctrl.currentGroup)">Add Group</button>
+    <button ng-click="ctrl.OnAddContact(ctrl.currentGroup)">Add Contact</button>
+    <!--<div ui-view></div>-->
+</div>
